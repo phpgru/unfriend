@@ -1,7 +1,3 @@
-$(document).ready(function() {
-	console.log("Content script ready...");
-});
-
 window.ContentScript = {
 	getFriends: function() {
 		var $allFriendsContainer = $("#pagelet_timeline_medley_friends ul[data-pnref='friends'] li>div"),
@@ -20,10 +16,21 @@ window.ContentScript = {
 	},
 
 	start: function(state) {
+		var friendsAllShowTimer = null,
+			self = this;
 		if (isLoggedIn()) {
 			if (isProfilePage()) {
-				friends = this.getFriends();
-				chrome.extension.sendMessage({msg: "friends", friends: friends});
+				friendsAllShowTimer = setInterval(function() {
+					$loadingIcon = $("#pagelet_timeline_medley_friends>div:nth-child(2)>div>img.img");
+					if ($loadingIcon.length === 0) {
+						clearInterval(friendsAllShowTimer);
+
+						friends = self.getFriends();
+						chrome.extension.sendMessage({msg: "friends", friends: friends});
+					} else {
+						$(document).scrollTop($loadingIcon.offset().top);
+					}
+				}, 300);
 			} else {
 				chrome.extension.sendMessage({msg: "go",  target: "friends"});
 			}
@@ -57,7 +64,9 @@ window.ContentScript = {
 
 chrome.extension.sendMessage({msg: "state"}, function(state) {
 	if (state.started) {
-		window.ContentScript.start(state);
+		$(document).ready(function() {
+			window.ContentScript.start(state);
+		});
 	}
 });
 

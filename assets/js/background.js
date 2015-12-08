@@ -6,7 +6,13 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 
 		case "start":
 			friends.start();
-			chrome.tabs.sendMessage(sender.tab.id, {msg: "start", state: friends.getState()});
+			chrome.tabs.query({
+				currentWindow:true, 
+				active:true
+			}, function(tabs){
+				console.log(tabs);
+				chrome.tabs.sendMessage(tabs[0].id, {msg: "start", state: friends.getState()});
+			});
 			break;
 
 		case "stop":
