@@ -6,12 +6,24 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 
 		case "start":
 			friends.start();
+			chrome.tabs.sendMessage(sender.tab.id, {msg: "start", state: friends.getState()});
+			break;
+
+		case "stop":
+			friends.stop();
+			sendResponse();
+			break;
+
+		case "credentials":
+			username = request.username;
+			password = request.password;
+			friends.setCredentials(username, password);
 			break;
 
 		case "go":
 			switch(request.target) {
 				case "friends":
-					friends.openProfilePage();
+					chrome.tabs.update(sender.tab.id, {url: friends.getProfileLink()});
 					break;
 
 				case "login":
@@ -21,6 +33,10 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 				default:
 					break;
 			}
+			break;
+
+		case "friends":
+			friends.setFriends(request.friends);
 			break;
 
 		default:
