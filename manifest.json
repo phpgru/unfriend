@@ -1,0 +1,44 @@
+{
+   "background": {
+      "scripts": [ 
+         "assets/js/jquery.min.js", 
+         "assets/js/common.js",
+         "assets/js/friends.js",
+         "assets/js/background.js" 
+      ]
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ 
+         "assets/js/jquery.min.js", 
+         "assets/js/common.js",
+         "assets/js/content_script.js" ],
+      "matches": [ 
+         "https://www.facebook.com/*"
+      ]
+   } ],
+   "browser_action": {
+          "default_icon": {
+            "19": "assets/img/favicon.png",
+            "38": "assets/img/favicon.png"
+          },
+          "default_title": "Facebook unfriend",
+          "default_popup": "assets/html/popup.html"
+        },
+   "description": "Facebook friends checking...",
+   "icons": {
+      "128": "assets/img/favicon.png",
+      "16": "assets/img/favicon.png",
+      "48": "assets/img/favicon.png",
+      "64": "assets/img/favicon.png"
+   },
+   "manifest_version": 2,
+   "name": "Unfriend",
+   "options_page": "assets/html/options.html",
+   "permissions": [ 
+      "tabs", 
+      "https://www.facebook.com/",
+      "storage" 
+   ],
+   "version": "0.0.1"
+}

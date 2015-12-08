@@ -1,0 +1,12 @@
+.wrapper {
+	width: 120px;
+}
+
+.wrapper button {
+	width: 100%;
+	padding: 5px;
+}
+
+.wrapper button:first-child {
+	margin-bottom: 5px;
+}
