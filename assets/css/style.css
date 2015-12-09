@@ -1,0 +1,38 @@
+/**
+ *	Popup page
+ */
+.popup-wrapper {
+	width: 120px;
+}
+
+.popup-wrapper button {
+	width: 100%;
+	padding: 5px;
+}
+
+.popup-wrapper button:first-child {
+	margin-bottom: 5px;
+}
+
+
+
+/**
+ *	Options page
+ */
+.options-page {
+	padding-top: 50px;
+	margin: 0;}
+	.options-page .input-group {
+		padding: 5px 0;}
+		.options-page .input-group button {
+			margin-left: 10px;
+			float: right;
+			font-size: 20px;}
+			.options-page .input-group .input-group-addon.custom-frequency-detail {
+				padding: 0;}
+				.options-page .input-group .input-group-addon.custom-frequency-detail select {
+					background: transparent;
+					border: none;
+					width: 111px;
+					height: 100%;
+					padding-left: 10px;}
