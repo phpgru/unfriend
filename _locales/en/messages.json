@@ -1,0 +1,65 @@
+{
+	"description": {
+		"message": "Facebook friends checking..."
+	},
+	"name": {
+		"message": "Facebook Unfriend"
+	},
+	"shortname": {
+		"message": "Unfriend"
+	},
+	"optionPageTitle": {
+		"message": "Facebook Unfriend Options"
+	},
+	"optionFrequencyLabel": {
+		"message": "How many times?"
+	},
+	"frequencyOption1": {
+		"message": "Once a Day"
+	},
+	"frequencyOption2": {
+		"message": "Once a Week"
+	},
+	"frequencyOption3": {
+		"message": "Custom"
+	},
+	"customFrequencyDetailLabel": {
+		"message": "Every"
+	},
+	"customFrequencyUnit1": {
+		"message": "Minute(s)"
+	},
+	"customFrequencyUnit2": {
+		"message": "Hour(s)"
+	},
+	"customFrequencyUnit3": {
+		"message": "Day(s)"
+	},
+	"optionSaveButtonText": {
+		"message": "Save Changes"
+	},
+	"optionSaveButtonTitle": {
+		"message": "Click to save your changes."
+	},
+	"optionUpdateButtonText": {
+		"message": "Update Now"
+	},
+	"optionUpdateButtonTitle": {
+		"message": "Click to check facebook friends."
+	},
+	"popupUpdateButtonText": {
+		"message": "Update Now"
+	},
+	"optionConfigTabTitle": {
+		"message": "Configuration"
+	},
+	"optionResultTabTitle": {
+		"message": "Result"
+	},
+	"curFriendCountLabel": {
+		"message": "Your friends on facebook"
+	},
+	"lostFriendCountLabel": {
+		"message": "Lost friends on facebook"
+	}
+}

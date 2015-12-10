@@ -1,9 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Credit Scroes Options</title>
+	<title data-i18n="optionPageTitle"></title>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/translate.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/friends.js"></script>
+	<script src="../js/options.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
-Coming soon...
+<div class="options-page">
+	<div class="page-header">
+		<h2><center data-i18n="optionPageTitle"></center></h2>
+	</div>
+	<div class="container">
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active">
+				<a href="#config" aria-controls="config" role="tab" data-toggle="tab" data-i18n="optionConfigTabTitle"></a>
+			</li>
+			<li role="presentation">
+				<a href="#result" aria-controls="result" role="tab" data-toggle="tab" data-i18n="optionResultTabTitle"></a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane fade in active" id="config">
+				<div class="input-group input-group-lg">
+					<span class="input-group-addon" id="option-frequency-label" data-i18n="optionFrequencyLabel"></span>
+					<select class="form-control" aria-describedby="option-frequency-label" id="option-frequency">
+						<option value="1 day" data-i18n="frequencyOption1"></option>
+						<option value="7 day" data-i18n="frequencyOption2"></option>
+						<option value="custom" data-i18n="frequencyOption3"></option>
+					</select>
+				</div>
+				<div class="input-group input-group-lg custom-frequency-container">
+					<span class="input-group-addon" data-i18n="customFrequencyDetailLabel"></span>
+					<input type="number" min="1" class="form-control" id="option-custom-frequency">
+					<span class="input-group-addon custom-frequency-detail">
+						<select class="" id="option-custom-frequency-unit">
+							<option value="min" data-i18n="customFrequencyUnit1"></option>
+							<option value="hour" data-i18n="customFrequencyUnit2"></option>
+							<option value="day" data-i18n="customFrequencyUnit3"></option>
+						</select>
+					</span>
+				</div>
+				<div class="input-group input-group-lg col-xs-12">
+					<button class="btn btn-success" data-i18n-title="optionSaveButtonTitle" data-i18n="optionSaveButtonText" id="save" disabled></button>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane fade" id="result">
+				<div class="report">
+					<div class="col-xs-12 col-sm-6 alert alert-success">
+						<span data-i18n="curFriendCountLabel"></span>&nbsp;:&nbsp;<span id="cur-friend-count"></span>
+					</div>
+					<div class="col-xs-12 col-sm-6 alert alert-danger">
+						<span data-i18n="lostFriendCountLabel"></span>&nbsp;:&nbsp;<span id="lost-friend-count"></span>
+					</div>
+				</div>
+				<div class="input-group input-group-lg col-xs-12">
+					<button class="btn btn-primary" data-i18n-title="optionUpdateButtonTitle" data-i18n="optionUpdateButtonText" id="update"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>

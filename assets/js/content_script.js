@@ -1,3 +1,10 @@
+/**
+ *	Content script for unfriend chrome extension
+ *	Written by Kevin
+ *	php.gru123@gmail.com
+ *	12/09/2015
+ */
+
 window.ContentScript = {
 	getFriends: function() {
 		var $allFriendsContainer = $("#pagelet_timeline_medley_friends ul[data-pnref='friends'] li>div"),
@@ -7,7 +14,7 @@ window.ContentScript = {
 			$friendBlock = $($allFriendsContainer[i]);
 			tempFriend = {
 				name: $friendBlock.find(".uiProfileBlockContent>div>div>div>a").text(),
-				link: ($friendBlock.find(".uiProfileBlockContent>div>div>div>a")[0] || {}).href
+				link: "https://www.facebook.com/profile.php" + $friendBlock.find(".uiProfileBlockContent>div>div>div>a").attr("data-hovercard")
 			};
 			friends.push(tempFriend);
 		}
@@ -26,7 +33,7 @@ window.ContentScript = {
 						clearInterval(friendsAllShowTimer);
 
 						friends = self.getFriends();
-						chrome.extension.sendMessage({msg: "friends", friends: friends});
+						chrome.extension.sendMessage({msg: "friends", id: getFacebookIdFromDom(), friends: friends});
 					} else {
 						$(document).scrollTop($loadingIcon.offset().top);
 					}

@@ -2,9 +2,15 @@
    "background": {
       "scripts": [ 
          "assets/js/jquery.min.js", 
+         "assets/js/moment.js", 
          "assets/js/common.js",
          "assets/js/friends.js",
          "assets/js/background.js" 
+      ]
+   },
+   "externally_connectable": {
+      "matches": [
+        "http://colui.dev/*"
       ]
    },
    "content_scripts": [ {
@@ -22,18 +28,20 @@
             "19": "assets/img/favicon.png",
             "38": "assets/img/favicon.png"
           },
-          "default_title": "Facebook unfriend",
+          "default_title": "__MSG_name__",
           "default_popup": "assets/html/popup.html"
         },
-   "description": "Facebook friends checking...",
+   "description": "__MSG_description__",
    "icons": {
       "128": "assets/img/favicon.png",
       "16": "assets/img/favicon.png",
       "48": "assets/img/favicon.png",
       "64": "assets/img/favicon.png"
    },
+   "default_locale": "en",
    "manifest_version": 2,
-   "name": "Unfriend",
+   "name": "__MSG_name__",
+   "short_name": "__MSG_shortname__",
    "options_page": "assets/html/options.html",
    "permissions": [ 
       "tabs", 
