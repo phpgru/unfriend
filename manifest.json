@@ -10,7 +10,7 @@
    },
    "externally_connectable": {
       "matches": [
-        "http://colui.dev/*"
+        "https://www.facebook.com/*"
       ]
    },
    "content_scripts": [ {
